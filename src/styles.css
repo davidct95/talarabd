@@ -1,0 +1,165 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #e4e9f3;
+}
+
+#header {
+    height: 10vh;
+    border: 1px solid green;
+}
+
+#fila {
+    height: 75vh;
+    width: 100vw;
+}
+
+#colum-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+    border: 1px solid red;
+}
+
+.tabla1 {
+    height: 37vh;
+}
+
+#caja-tabla-componente{
+    height: 70%;
+}
+
+#caja-paginacion{
+    display: flex;
+    justify-content: center;
+    height: 20%;
+
+}
+
+.tabla2{
+    height: 38vh;
+}
+
+#colum-2 {
+    width: 30vw;
+    border: 1px solid blue;
+}
+
+#fila {
+    display: flex;
+    font-family: "Calibri Light";
+}
+
+
+table,
+th,
+td {
+    border-right: 1px rgb(184, 182, 182) solid;
+    border-bottom: none;
+    padding: 0;
+}
+
+#tabla-container thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border: none;
+    text-align: center;
+}
+
+#tabla-container {
+    max-height: 260px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+#tabla-propiedades {
+    max-height: 200px;
+    overflow-y: auto;
+    width: 90%;
+    border: 1px rgb(184, 182, 182) solid;
+    border-collapse: collapse;
+}
+
+#tabla-componentes{
+    border: 1px rgb(184, 182, 182) solid;
+    border-collapse: collapse;
+}
+
+#tabla-componentes tr td {
+    cursor: default;
+}
+
+#tabla-componentes tr td:first-child {
+    cursor: pointer;
+}
+
+th {
+    vertical-align: middle;
+}
+
+#tabla-componentes th {
+    text-align: center;
+    border: none;
+}
+
+#tabla-componentes td {
+    padding: 1px 0px 1px 5px;
+    vertical-align: middle;
+}
+
+#tabla-propiedades td {
+    padding: 4px 0 4px 5px;
+    width: 33.33333%;
+    vertical-align: middle;
+}
+
+#tabla-componentes {
+    width: 60vw;
+    height: 10vh;
+    overflow-y: auto;
+}
+
+#tabla-propiedades {
+    width: 60vw;
+    height: 10vh;
+}
+
+.img-btn {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#btn-edit {
+    display: flex;
+}
+
+img {
+    width: 17px;
+}
+
+#img-link {
+    background-color: #4285f4;
+}
+
+#img-editar {
+    background-color: #00c851;
+    margin: 0 5px 0 5px;
+}
+
+#img-borrar {
+    background-color: #ff3547;
+}
+
+
+.selected {
+    border: 2px solid red;
+    box-sizing: border-box;
+}

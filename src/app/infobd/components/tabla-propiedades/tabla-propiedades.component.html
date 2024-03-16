@@ -1,0 +1,23 @@
+<app-botone-propiedades (registroSeleccionado)="onRegistroSeleccionado($event)"></app-botone-propiedades>
+<div id="tabla-container">
+  <table *ngIf="claves && claves.length >= 22" class="table table-striped" id="tabla-propiedades">
+    <thead>
+      <tr>
+        <th>Identicación del parámetro</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="seccionActual">
+        <ng-container *ngFor="let i of seccionActual.rangoIndices">
+          <tr>
+            <td>{{ claves[i] | titlecase}}</td>
+            <td></td>
+            <td>{{ valores[i] }}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

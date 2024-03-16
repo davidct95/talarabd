@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>{{ data.componente.nombre }}</h1>
+<div mat-dialog-content>
+  <div>
+    <span>Componente:</span>
+    <input type="text" [(ngModel)]="data.componente.componente" placeholder="Componente">
+  </div>
+  <div>
+    <span>Nombre:</span>
+    <input type="text" [(ngModel)]="data.componente.nombre" placeholder="Nombre">
+  </div>
+  <div>
+    <span>Sector:</span>
+    <input type="text" [(ngModel)]="data.componente.sector" placeholder="Sector">
+  </div>
+  <div>
+    <span>Paquete:</span>
+    <input type="text" [(ngModel)]="data.componente.paquete" placeholder="Paquete">
+  </div>
+  <div>
+    <span>Código:</span>
+    <input type="text" [(ngModel)]="data.componente.codigo" placeholder="Código">
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSave()">Guardar</button>
+  <button mat-button (click)="onClose()">Cerrar</button>
+</div>

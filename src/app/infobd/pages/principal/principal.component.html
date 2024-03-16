@@ -1,0 +1,13 @@
+<div id="fila">
+    <div id="colum-1">
+        <div class="tabla1">
+            <app-tabla-componentes (datoEmitido)="tablaPropiedades.onRegistroSeleccionado($event)"></app-tabla-componentes>
+        </div>
+        <div class="tabla2" >
+                <app-tabla-propiedades #tablaPropiedades></app-tabla-propiedades>
+        </div>
+    </div>
+    <div id="colum-2">
+        <app-mapa></app-mapa>
+    </div>
+</div>
