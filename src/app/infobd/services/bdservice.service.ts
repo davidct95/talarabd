@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -12,16 +12,43 @@ export class BdserviceService {
 
   getComponente(){
     const url = `${this.apiUrl}/componentesbd`;
-    return this.http.get<any>(url);
+    const headers = new HttpHeaders({
+      'ngrok-skip-browser-warning': 'true'
+    });
+  
+    return this.http.get<any>(url, { headers: headers });
   }
 
   getPropiedades(id: string){
     const url = `${this.apiUrl}/p/${id}`
-    return this.http.get<any>(url);
+    const headers = new HttpHeaders({
+      'ngrok-skip-browser-warning': 'true'
+    });
+    return this.http.get<any>(url, { headers: headers });
   }
 
   getPoligonos(){
     const url = `${this.apiUrl}/allJson`
-    return this.http.get<any>(url);
+    const headers = new HttpHeaders({
+      'ngrok-skip-browser-warning': 'true'
+    });
+    return this.http.get<any>(url, { headers: headers });
+  }
+
+  delete(id: string){
+    const url = `${this.apiUrl}/delete/${id}`
+    const headers = new HttpHeaders({
+      'ngrok-skip-browser-warning': 'true'
+    });
+    return this.http.delete<any>(url, { headers: headers });
+  }
+
+  actualizarDatos(id: string, updatedData: any) {
+    const url = `${this.apiUrl}/actualizar/${id}`;
+    const headers = new HttpHeaders({
+      'ngrok-skip-browser-warning': 'true'
+    });
+
+    return this.http.put(url, updatedData, { headers: headers });
   }
 }

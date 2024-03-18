@@ -1,7 +1,8 @@
-import { Component, Inject  } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { BdserviceService } from '../../services/bdservice.service';
 
 @Component({
   selector: 'app-modal-edit',
@@ -14,7 +15,8 @@ export class ModalEditComponent {
   constructor(
     public dialogRef: MatDialogRef<ModalEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private http: HttpClient 
+    private http: HttpClient,
+    private bdService: BdserviceService
   ) { }
 
   onClose(): void {
@@ -26,7 +28,7 @@ export class ModalEditComponent {
     const id = this.data.componente.id; // Supongamos que el ID está en data.componente.id
     const updatedData = this.data.componente;
 
-    this.http.put(`http://localhost:8080/home/actualizar/${id}`, updatedData)
+    this.bdService.actualizarDatos(id, updatedData)
       .subscribe(response => {
         console.log('Datos actualizados correctamente:', response);
         // Cierra el modal después de que los datos se hayan guardado exitosamente

@@ -12,7 +12,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let componente of componentes | paginate: { itemsPerPage: 5, currentPage: currentPage }"
-                [class.selected]="selectedComponentId === componente.id" (click)="actualizarURL(componente.id); selectComponent(componente.id)">
+                [class.selected]="selectedComponentId === componente.id"
+                (click)="actualizarURL(componente.id); selectComponent(componente.id)">
                 <td>{{ componente.componente | titlecase}}</td>
                 <td>{{ componente.nombre | titlecase}}</td>
                 <td>{{ componente.sector | number: '1.1'}}</td>
@@ -22,13 +23,15 @@
                     <a [href]="componente.enlace_bim" target="_blank">
                         <div class="img-btn" id="img-link"><img src="../../../../assets/img/web.png" alt="link" /></div>
                     </a>
-                    <div class="img-btn" id="img-editar"><img src="../../../../assets/img/editar.png" alt="editar"
-                            (click)="openModal(componente)" /></div>
-                    <a href="">
-                        <div class="img-btn" id="img-borrar"><img src="../../../../assets/img/borrar.png"
-                                alt="borrar" />
-                        </div>
-                    </a>
+                    <div>
+                        <div class="img-btn" id="img-editar"><img src="../../../../assets/img/editar.png" alt="editar"
+                                (click)="openModal(componente)" /></div>
+                    </div>
+
+                    <div (click)="eliminarRegistro(componente.id)" class="img-btn" id="img-borrar"><img
+                            src="../../../../assets/img/borrar.png" alt="borrar" />
+                    </div>
+
                 </td>
             </tr>
         </tbody>

@@ -21,8 +21,6 @@ export class TablaPropiedadesComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
-      console.log(this.id); // o haz lo que necesites con el parámetro 'id'
-
       this.bdserviceService.getPropiedades(this.id)
         .subscribe(resp => {
           this.propiedades = resp;

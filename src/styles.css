@@ -1,9 +1,6 @@
 html,
 body {
     height: 100%;
-}
-
-body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: #e4e9f3;
@@ -12,6 +9,30 @@ body {
 #header {
     height: 10vh;
     border: 1px solid green;
+}
+
+#cabecera{
+    height: 100%;
+    background-color: #3b50b2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+#titulo{
+    font-family: Calibri;
+    color: white;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#logo-syp{
+    width: 120px;
+}
+
+#logo-anin{
+    width: 190px;
 }
 
 #fila {
@@ -24,12 +45,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70vw;
-    border: 1px solid red;
+    width: 65vw;
 }
 
 .tabla1 {
     height: 37vh;
+    padding-top: 30px;
 }
 
 #caja-tabla-componente{
@@ -44,12 +65,21 @@ body {
 }
 
 .tabla2{
+    align-items: center;
     height: 38vh;
+    padding-top: 30px;
 }
 
 #colum-2 {
-    width: 30vw;
-    border: 1px solid blue;
+    width: 35vw;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#map{
+    margin: auto;
+    height: 100%;
+    width: 80%;
 }
 
 #fila {
@@ -139,6 +169,9 @@ th {
 
 #btn-edit {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 img {
@@ -163,3 +196,9 @@ img {
     border: 2px solid red;
     box-sizing: border-box;
 }
+
+#pie{
+    height: 15vh;
+    background-color: #3b50b2;
+}
+

@@ -20,4 +20,20 @@
       </ng-container>
     </tbody>
   </table>
+  <table *ngIf="!claves" class="table table-striped" id="tabla-propiedades">
+    <thead>
+      <tr>
+        <th>Identicación del parámetro</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="height: 5px;">
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

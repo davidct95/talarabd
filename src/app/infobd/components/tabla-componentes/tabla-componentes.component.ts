@@ -14,6 +14,7 @@ import { ModalEditComponent } from '../modal-edit/modal-edit.component';
 export class TablaComponentesComponent implements OnInit {
 
   @Output() datoEmitido = new EventEmitter<string>();
+  @Output() registroEliminado = new EventEmitter<void>();
 
   componentes!: any[];
   seccion: any = {
@@ -40,14 +41,11 @@ export class TablaComponentesComponent implements OnInit {
         const jsonOrdenado = this.componentes.sort(function (a, b) {
           const componenteA = a.componente.toLowerCase();
           const componenteB = b.componente.toLowerCase();
-        
+
           if (componenteA < componenteB) { return -1; }
           if (componenteA > componenteB) { return 1; }
           return 0;
         });
-
-        console.log(jsonOrdenado);
-
       });
 
     this.route.params.subscribe((params: Params) => {
@@ -84,5 +82,18 @@ export class TablaComponentesComponent implements OnInit {
 
   selectComponent(componentId: string) {
     this.selectedComponentId = componentId;
-}
+  }
+
+  eliminarRegistro(id: string) {
+    this.bdservices.delete(id)
+      .subscribe(() => {
+        console.log('El registro se eliminó correctamente');
+        // Eliminar el componente de la lista después de la eliminación
+        this.componentes = this.componentes.filter(componente => componente.id !== id);
+        this.registroEliminado.emit(); // Emitir evento de registro eliminado
+      },
+      error => {
+        console.log('Error al eliminar el registro', error);
+      })
+  }
 }
